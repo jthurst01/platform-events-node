@@ -19,13 +19,12 @@ router.post('/', function(req, res, next) {
   pie.set('Printer_Model__c', req.body.printerModel);
   pie.set('Printer_Ink_Level__c', req.body.printerInkLevel);
 
-  console.log('req = ' + req);
-  console.log('res = ' + res);
-  console.log('next = ' + next);
+  console.log('req = ' + JSON.stringify(req));
+  console.log('res = ' + JSON.stringify(res));
   console.log('req.body.customerId = ' + req.body.customerId);
   console.log('req.body.printerModel = ' + req.body.printerModel);
   console.log('req.body.printerInkLevel = ' + req.body.printerInkLevel);
-  console.log('pie = ' + pie);  
+  console.log('pie = ' + JSON.stringify(pie));  
   
   org.insert({ sobject: pie })
     .then(
