@@ -13,18 +13,19 @@ router.get('/', function(req, res, next) {
 
 /* Creates a new the record */
 router.post('/', function(req, res, next) {
+ 
+  var pie = nforce.createSObject('Printer_Ink_Event__e');
+  pie.set('CustomerId__c', req.body.customerId);
+  pie.set('Printer_Model__c', req.body.printerModel);
+  pie.set('Printer_Ink_Level__c', req.body.printerInkLevel);
+
   console.log('req = ' + req);
   console.log('res = ' + res);
   console.log('next = ' + next);
-  var pie = nforce.createSObject('Printer_Ink_Event__e');
-  pie.set('CustomerId__c', req.body.customerId);
   console.log('req.body.customerId = ' + req.body.customerId);
-  pie.set('Printer_Model__c', req.body.printerModel);
   console.log('req.body.printerModel = ' + req.body.printerModel);
-  pie.set('Printer_Ink_Level__c', req.body.printerInkLevel);
   console.log('req.body.printerInkLevel = ' + req.body.printerInkLevel);
-  console.log('pie = ' + pie);
-  
+  console.log('pie = ' + pie);  
   
   org.insert({ sobject: pie })
     .then(
