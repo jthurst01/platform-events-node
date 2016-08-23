@@ -5,63 +5,37 @@
 <!-- PAGE HEADER -->
 <div class="slds-page-header" role="banner">
 
-  <!-- LAYOUT GRID -->
-  <div class="slds-grid">
+	<!-- LAYOUT GRID -->
+	<div class="slds-grid">
 
-    <!-- GRID COL -->
-    <div class="slds-col">
+		<!-- GRID COL -->
+		<div class="slds-col">
 
-      <!-- HEADING AREA -->
-      <!-- MEDIA OBJECT = FIGURE + BODY -->
-      <div class="slds-media">
+			<!-- HEADING AREA -->
+			<!-- MEDIA OBJECT = FIGURE + BODY -->
+			<div class="slds-media">
 
-        <!-- div class="slds-media__figure">
-          <span class="slds-avatar slds-avatar--large">
-            <img src="assets/images/avatar1.jpg" alt="portrait" />
-          </span>
-        </div -->
-        
-        <div class="slds-media__figure slds-icon_container slds-icon-custom-88">
-          <svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-88">
-            <use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom88"></use>
-          </svg>
-        </div>
+				<div class="slds-media__figure">
+					<svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-custom-88">
+						<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom88"></use>
+					</svg>
+				</div>
 
-        <div class="slds-media__body">
-          <p class="slds-text-heading--label">Accounts</p>
-          <h1 class="slds-text-heading--medium">My Accounts</h1>
-        </div>
+				<div class="slds-media__body">
+					<p class="slds-text-heading--label">Printer Ink Level</p>
+					<h1 class="slds-text-heading--medium">New Printer Ink Level</h1>
+				</div>
 
-      </div>
-      <!-- / MEDIA OBJECT -->
-      <!-- /HEADING AREA -->
+			</div>
+			<!-- / MEDIA OBJECT -->
+			<!-- HEADING AREA -->
 
-    </div>
+		</div>
 
+	</div>
+	<!-- / LAYOUT GRID -->
 
-		
-		
-		<span class="slds-icon_container slds-icon-custom-custom-88">
-			<svg aria-hidden="true" class="slds-icon slds-icon--large">
-				<use xlink:href="/assets/icons/custom-sprite/svg/symbols.svg#custom88"></use>
-			</svg>
-			<span class="slds-assistive-text">Description of icon</span>
-		</span>
-		
-    <!-- GRID COL -->
-    <div class="slds-col slds-no-flex slds-align-middle">
-
-      <div class="slds-button-group" role="group">
-        <a class="slds-button slds-button--neutral" href="/new">New Platform Event</a>
-      </div>
-
-    </div>
-    <!-- / GRID COL -->
-
-  </div>
-  <!-- / LAYOUT GRID -->
-
-  <p class="slds-text-body--small slds-m-top--x-small">{{records.length}} items</p>
+	<p class="slds-text-body--small slds-m-top--x-small">{{records.length}} items</p>
 
 </div>
 <!-- / PAGE HEADER -->
@@ -69,63 +43,64 @@
 <!-- PRIMARY CONTENT WRAPPER -->
 <div class="myapp">
 
-  <!-- CREATE NEW PRINTER INK LEVEL EVENT -->
-    <div aria-labelledby="newpieform">
+	<!-- CREATE NEW PRINTER INK LEVEL EVENT -->
+	<div aria-labelledby="newpieform">
 
-      <!-- BOXED AREA -->
-      <fieldset class="slds-box slds-theme--default">
+		<!-- BOXED AREA -->
+		<fieldset class="slds-box slds-theme--default">
 
-        <!-- CREATE NEW PRINTER INK LEVEL EVENT FORM -->
-        <form action="/" method="post" class="slds-form--stacked">
+			<!-- CREATE NEW PRINTER INK LEVEL EVENT FORM -->
+			<form action="/" method="post" class="slds-form--stacked">
 
-          <div class="slds-grid">
-            <div class="slds-col--padded slds-size--1-of-1">
+				<div class="slds-grid">
+					<div class="slds-col--padded slds-size--1-of-1">
 
-              <div class="slds-form-element slds-is-required">
-                <label class="slds-form-element__label" for="customerId">Customer Id</label>
-                <div class="slds-form-element__control">
-                  <select name="customerId" id="customerId" class="slds-select" required>
-                      <option>0100000002</option>
-                      <option>0100000004</option>
-                      <option>0100000005</option>
-                      <option>0100000006</option>
-                      <option>0100000008</option>
-                  <span id="customerIdHelp" class="slds-form-element__help">You must enter a Customer Id.</span>
-                </div>
-              </div>
+						<div class="slds-form-element slds-is-required">
+							<label class="slds-form-element__label" for="customerId">Customer Id</label>
+							<div class="slds-form-element__control">
+								<select name="customerId" id="customerId" class="slds-select" required>
+									<option>0100000002</option>
+									<option>0100000004</option>
+									<option>0100000005</option>
+									<option>0100000006</option>
+									<option>0100000008</option>
+								</select>
+								<span id="customerIdHelp" class="slds-form-element__help">You must enter a Customer Id.</span>
+							</div>
+						</div>
 
-              <div class="slds-form-element">
-                <div class="slds-form-element">
-                  <label class="slds-form-element__label" for="printerModel">Printer Model</label>
-                  <div class="slds-form-element__control">
-                    <select name="printerModel" id="printerModel" class="slds-select">
-                      <option>Canon-PIXMA-MP990</option>
-                      <option>HP-Officejet-Pro-6000</option>
-                      <option>Lexmark-MS315dn-35S0160</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="slds-form-element slds-is-required">
-                <label class="slds-form-element__label" for="printerInkLevel">Printer Ink Level/label>
-                <div class="slds-form-element__control">
-                  <input name="printerInkLevel" id="printerInkLevel" class="slds-input" type="number" required/>
-                  <span id="printerInkLevelHelp" class="slds-form-element__help">You must enter a Printer Ink Level.</span>
-                </div>
-              </div>
+						<div class="slds-form-element slds-is-required">
+							<label class="slds-form-element__label" for="printerModel">Printer Model</label>
+							<div class="slds-form-element__control">
+								<select name="printerModel" id="printerModel" class="slds-select" required>
+									<option>Canon-PIXMA-MP990</option>
+									<option>HP-Officejet-Pro-6000</option>
+									<option>Lexmark-MS315dn-35S0160</option>
+								</select>
+								<span id="customerIdHelp" class="slds-form-element__help">You must enter a Printer Model.</span>
+							</div>
+						</div>
 
-            </div>
+						<div class="slds-form-element slds-is-required">
+							<label class="slds-form-element__label" for="printerInkLevel">Printer Ink Level</label>
+							<div class="slds-form-element__control">
+								<input name="printerInkLevel" id="printerInkLevel" class="slds-input" type="number" required/>
+								<span id="printerInkLevelHelp" class="slds-form-element__help">You must enter a Printer Ink Level.</span>
+							</div>
+						</div>
+					</div>
 
-          <button class="slds-button slds-button--brand slds-m-top--medium" type="submit">Create Event</button>
-        </form>
-        <!-- CREATE NEW PRINTER INK LEVEL EVENT FORM -->
+				</div>
 
-      </fieldset>
-      <!-- / BOXED AREA -->
+				<button class="slds-button slds-button--brand slds-m-top--medium" type="submit">Create Event</button>
+			</form>
+			<!-- CREATE NEW PRINTER INK LEVEL EVENT FORM -->
 
-    </div>
-    <!-- / CREATE NEW PRINTER INK LEVEL EVENT -->
+		</fieldset>
+		<!-- / BOXED AREA -->
+
+	</div>
+	<!-- / CREATE NEW PRINTER INK LEVEL EVENT -->
 
 </div>
 <!-- / PRIMARY CONTENT WRAPPER -->
