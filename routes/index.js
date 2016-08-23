@@ -31,7 +31,7 @@ router.post('/', function(req, res, next) {
   
   org.insert({ sobject: pie })
     .then(
-      res.redirect('/' + account.id);
+      res.redirect('/')
     )
 });
 
