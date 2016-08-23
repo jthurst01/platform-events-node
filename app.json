@@ -1,11 +1,11 @@
 
 {
-  "name": "Node Demo w/ Salesforce & SLDS",
-  "description": "Simple NodeJS application using the Lightning Design System for CRUDing Salesforce Accounts.",
-  "repository": "https://github.com/jeffdonthemic/node-nforce-demo",
-  "website": "http://blog.jeffdouglas.com",
-  "logo": "https://raw.githubusercontent.com/jeffdonthemic/node-nforce-demo/master/public/salesforce-logo.png",
-  "keywords": ["node", "salesforce", "nforce", "lightning", "lds", "slds", "lightningdesignsystem"],
+  "name": "Salesforce Platform Event Demo",
+  "description": "Simple NodeJS application using the Lightning Design System for working with Platform Events.",
+  "repository": "https://git.heroku.com/platform-events-node.git",
+  "website": "http://www.salesforce.com",
+  "logo": "",
+  "keywords": ["node", "salesforce", "nforce", "lightning", "lds", "slds", "Platform Events"],
   "env": {
     "USERNAME": {
       "description": "Your Saleforce.com username"
