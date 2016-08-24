@@ -12,7 +12,7 @@ a {
   color: #00B7FF;
 }
 
-#leftcontent{
+.leftcontent{
 	position: absolute;
 	top: 0;
 	bottom: 0; 
@@ -22,7 +22,7 @@ a {
 	overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
 }
 
-#rightcontent{
+.rightcontent{
 	position: fixed;
 	top: 0; 
 	left: 600px; /*Set left value to WidthOfFrameDiv*/
