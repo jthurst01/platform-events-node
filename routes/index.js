@@ -28,7 +28,7 @@ router.post('/', function(req, res, next) {
   
   org.insert({ sobject: pie })
     .then(
-      res.render('index');
+      res.render('index')
     )
 });
 
