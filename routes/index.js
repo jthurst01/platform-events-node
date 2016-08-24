@@ -27,9 +27,9 @@ router.post('/', function(req, res, next) {
   //console.log(util.inspect(pie, { showHidden: true, depth: null }));
   
   org.insert({ sobject: pie })
-    .then(
-      res.redirect('/')
-    )
+    //.then(
+    //  res.redirect('/')
+    //)
 });
 
         
