@@ -7,7 +7,6 @@ var nforce = require('nforce');
 var org = require('../lib/connection');
 
 const util = require('util');
-console.log(org);        
 
 /* home page. */
 router.get('/', function(req, res, next) {
@@ -22,15 +21,15 @@ router.post('/', function(req, res, next) {
   pie.set('Printer_Model__c', req.body.printerModel);
   pie.set('Printer_Ink_Level__c', req.body.printerInkLevel);
 
-  console.log('req.customerId = ' + req.body.customerId);
-  console.log('req.printerModel = ' + req.body.printerModel);
-  console.log('req.printerInkLevel = ' + req.body.printerInkLevel);
+  //console.log('req.customerId = ' + req.body.customerId);
+  //console.log('req.printerModel = ' + req.body.printerModel);
+  //console.log('req.printerInkLevel = ' + req.body.printerInkLevel);
   //console.log(util.inspect(pie, { showHidden: true, depth: null }));
   
-  org.insert({ sobject: pie });
-    //.then(
-    //  res.redirect('/')
-    //)
+  org.insert({ sobject: pie })
+    .then(
+      res.redirect('/')
+    )
 });
 
         

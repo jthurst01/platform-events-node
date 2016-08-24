@@ -3,26 +3,22 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/assets/styles/salesforce-lightning-design-system.min.css' />
-    <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
       var url = window.location.href.split("/");
-      var socket = io.connect(url[0] + "//" + url[2]);    
+      var socket =  io.connect(url[0] + "//" + url[2]);    
       socket.on('record-processed', function (data) {
         var results = JSON.parse(data);
         console.log(results);
-        $('.content').append('<p>Notification ' +
-			'on channel: ' + JSON.stringify(data.channel) + '<br>' +
-			 'Replay Id: ' + JSON.stringify(data.event.replayId) + '<br>' +
-			 'Event Created Date: ' + JSON.stringify(data.payload.CreatedDate) + '<br/>' + 
-			 'Customer Id: ' + JSON.stringify(data.payload.CustomerId__c) + '<br/>' + 
-			 'Printer Model: ' + JSON.stringify(data.payload.Printer_Model__c) + '<br/>' + 
-		     'Printer Ink Level: ' + JSON.stringify(data.payload.Printer_Ink_Level__c) + '</p>');
+        console.log(results);
+        //$('<div>Received Platform Event: '+results['payload']['Name']+'</div>').prependTo('#messages');
+        $('#content').apppend('<p>Notification ' +
+			'Replay Id: ' + results['event']['replayId'] + '<br>' +
+			'Event Created Date: ' + results['payload']['replayId'] + '<br/>' + 
+			'Customer Id: ' + results['payload']['CustomerId__c'] + '<br/>' + 
+			'Printer Model: ' + results['payload']['Printer_Model__c'] + '<br/>' + 
+			'Printer Ink Level: ' + results['payload']['Printer_Ink_Level__c'] + '</p>');
       })
     </script>
   </head>
