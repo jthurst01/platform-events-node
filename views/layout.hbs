@@ -3,24 +3,6 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/assets/styles/salesforce-lightning-design-system.min.css' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript">
-      var url = window.location.href.split("/");
-      var socket =  io.connect(url[0] + "//" + url[2]);    
-      socket.on('record-processed', function (data) {
-        var results = JSON.parse(data);
-        console.log(results);
-        console.log(results);
-        //$('<div>Received Platform Event: '+results['payload']['Name']+'</div>').prependTo('#messages');
-        $('#content').apppend('<p>Notification ' +
-			'Replay Id: ' + results['event']['replayId'] + '<br>' +
-			'Event Created Date: ' + results['payload']['replayId'] + '<br/>' + 
-			'Customer Id: ' + results['payload']['CustomerId__c'] + '<br/>' + 
-			'Printer Model: ' + results['payload']['Printer_Model__c'] + '<br/>' + 
-			'Printer Ink Level: ' + results['payload']['Printer_Ink_Level__c'] + '</p>');
-      })
-    </script>
   </head>
   <body>
     <div class="slds slds-m-vertical--large slds-m-horizontal--large">
