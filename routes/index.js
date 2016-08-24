@@ -16,10 +16,11 @@ router.get('/', function(req, res, next) {
 /* Creates a new the record */
 router.post('/', function(req, res, next) {
  
-  var pie = nforce.createSObject('Printer_Ink_Level__e');
+  var pie = nforce.createSObject('Customer_Order__e');
   pie.set('CustomerId__c', req.body.customerId);
-  pie.set('Printer_Model__c', req.body.printerModel);
-  pie.set('Printer_Ink_Level__c', req.body.printerInkLevel);
+  pie.set('Product_Name__c', req.body.productName);
+  pie.set('Number_of_Units__c', req.body.numberOfUnits);
+  pie.set('Total_Amount__c', req.body.totalAmount);  
 
   //console.log('req.customerId = ' + req.body.customerId);
   //console.log('req.printerModel = ' + req.body.printerModel);

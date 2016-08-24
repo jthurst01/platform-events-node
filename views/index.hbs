@@ -22,8 +22,8 @@
 				</div>
 
 				<div class="slds-media__body">
-					<p class="slds-text-heading--label">Printer Ink Level</p>
-					<h1 class="slds-text-heading--medium">New Printer Ink Level</h1>
+					<p class="slds-text-heading--label">Customer Order</p>
+					<h1 class="slds-text-heading--medium">New Customer Order</h1>
 				</div>
 
 			</div>
@@ -68,21 +68,29 @@
 						</div>
 
 						<div class="slds-form-element slds-is-required">
-							<label class="slds-form-element__label" for="printerModel">Printer Model</label>
+							<label class="slds-form-element__label" for="productName">Product Name</label>
 							<div class="slds-form-element__control">
-								<select name="printerModel" id="printerModel" class="slds-select" required>
-									<option>Canon-PIXMA-MP990</option>
-									<option>HP-Officejet-Pro-6000</option>
-									<option>Lexmark-MS315dn-35S0160</option>
+								<select name="productName" id="productName" class="slds-select" required>
+									<option>Wonderful Widgets</option>
+									<option>Spectacular Sprockets</option>
+									<option>Terrific Thingamajigs/option>
 								</select>
 								<!-- span id="customerIdHelp" class="slds-form-element__help">You must enter a Printer Model.</span -->
 							</div>
 						</div>
 
 						<div class="slds-form-element slds-is-required">
-							<label class="slds-form-element__label" for="printerInkLevel">Printer Ink Level</label>
+							<label class="slds-form-element__label" for="numberOfUnits">Number of Units</label>
 							<div class="slds-form-element__control">
-								<input name="printerInkLevel" id="printerInkLevel" class="slds-input" type="number" required/>
+								<input name="numberOfUnits" id="numberOfUnits" class="slds-input" type="number" required/>
+								<!--span id="printerInkLevelHelp" class="slds-form-element__help">You must enter a Printer Ink Level.</span-->
+							</div>
+						</div>
+						
+						<div class="slds-form-element slds-is-required">
+							<label class="slds-form-element__label" for="totalAmount">Total Amount</label>
+							<div class="slds-form-element__control">
+								<input name="totalAmount" id="totalAmount" class="slds-input" type="number" required/>
 								<!--span id="printerInkLevelHelp" class="slds-form-element__help">You must enter a Printer Ink Level.</span-->
 							</div>
 						</div>
@@ -90,7 +98,7 @@
 
 				</div>
 
-				<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" >Create Event</button>
+				<button class="slds-button slds-button--brand slds-m-top--medium" id="createBtn" >Create Customer Order/button>
 			</form>
 			<!-- CREATE NEW PRINTER INK LEVEL EVENT FORM -->
 
