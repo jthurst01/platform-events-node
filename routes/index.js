@@ -7,6 +7,7 @@ var nforce = require('nforce');
 var org = require('../lib/connection');
 
 const util = require('util');
+console.log(org);        
 
 /* home page. */
 router.get('/', function(req, res, next) {
@@ -21,19 +22,39 @@ router.post('/', function(req, res, next) {
   pie.set('Printer_Model__c', req.body.printerModel);
   pie.set('Printer_Ink_Level__c', req.body.printerInkLevel);
 
-  console.log('req.body.customerId = ' + req.body.customerId);
-  console.log('req.body.printerModel = ' + req.body.printerModel);
-  console.log('req.body.printerInkLevel = ' + req.body.printerInkLevel);
+  console.log('req.customerId = ' + req.body.customerId);
+  console.log('req.printerModel = ' + req.body.printerModel);
+  console.log('req.printerInkLevel = ' + req.body.printerInkLevel);
+  //console.log(util.inspect(pie, { showHidden: true, depth: null }));
   
-  console.log(util.inspect(pie, { showHidden: true, depth: null }));
-  
-  org.insert({ sobject: pie })
-    .then(
-      res.redirect('/')
-    )
+  org.insert({ sobject: pie });
+    //.then(
+    //  res.redirect('/')
+    //)
 });
 
+        
+/*var client = org.createStreamClient();
 
+var accs = client.subscribe({ topic: 'Printer_Ink_Level__e', isPlatformEvent: true });
+
+accs.on('error', function(err) {
+	console.log('subscription error');
+	console.log(err);
+	client.disconnect();
+});
+
+accs.on('data', function(data) {
+	console.log(data);
+	$('#content').append('<p>Notification ' +
+		'on channel: ' + JSON.stringify(data.channel) + '<br>' +
+		 'Replay Id: ' + JSON.stringify(data.event.replayId) + '<br>' +
+		 'Event Created Date: ' + JSON.stringify(data.payload.CreatedDate) + '<br/>' + 
+		 'Customer Id: ' + JSON.stringify(data.payload.CustomerId__c) + '<br/>' + 
+		 'Printer Model: ' + JSON.stringify(data.payload.Printer_Model__c) + '<br/>' + 
+	     'Printer Ink Level: ' + JSON.stringify(data.payload.Printer_Ink_Level__c) + '</p>');
+});
+  
 /* Record detail page */
 //router.get('/:id', function(req, res, next) {
   // query for record, contacts and opportunities
@@ -82,5 +103,7 @@ router.post('/', function(req, res, next) {
 //      res.redirect('/' + req.params.id);
 //    })
 //});
+
+
 
 module.exports = router;
